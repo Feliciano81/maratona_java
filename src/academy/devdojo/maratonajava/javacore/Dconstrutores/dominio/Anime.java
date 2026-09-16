@@ -5,31 +5,39 @@ public class Anime {
     private String tipo;
     private int episodio;
     private String genero;
+    private String estudio;
 
-    /*método que será chamado na classe AnimeTeste01 e pedirá como parâmetro
-    * as informações necessárias que irão preencher os atributos da classe Anime    */
-    public void init(String nome, String tipo, int episodio){
+    /*Esse é o construtor que obriga você criar um objeto já com esse
+     * atributos setados por padrão*/
+    public Anime(String nome, String tipo, int episodio, String genero) {
+        //Esse this faz a chamada de outro construtor, que fará a sobrecarga
+        this();
         this.nome = nome;
         this.tipo = tipo;
         this.episodio = episodio;
-
-
-    }
-    /*Este método é a sobrecarga do método acima, onde ele possui um parâmetro a mais
-    * sendo necessário somente chamar os parametros do método acima e adicionar o parâmetro restante
-    *  por esse método, que seria adicionado o this.genero*/
-    public void init(String nome, String tipo, int episodio, String genero){
-        this.init(nome, tipo, episodio);
         this.genero = genero;
 
-
+    }
+    /* Esse construtor possui 5 parametros, ou seja, tem a possibilidade de utilizar
+    * o construtor com 4 parametros, com 5 e o que não tem nenhum parâmetro*/
+    public Anime(String nome, String tipo, int episodio, String genero, String estudio) {
+        //Esse this faz a chamada de outro construtor, que fará a sobrecarga
+        this(nome, tipo, episodio, genero);
+        this.estudio = estudio;
     }
 
-    public void imprime(){
+    public Anime(){
+        System.out.println("Dentro do construtor sem argumentos");
+    }
+
+
+    public void imprime() {
         System.out.println(this.nome);
         System.out.println(this.tipo);
         System.out.println(this.episodio);
         System.out.println(this.genero);
+        System.out.println(this.estudio);
+
     }
 
 

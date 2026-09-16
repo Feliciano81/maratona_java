@@ -4,12 +4,8 @@ import academy.devdojo.maratonajava.javacore.Dconstrutores.dominio.Anime;
 
 public class AnimeTeste01 {
     public static void main(String[] args) {
-        Anime anime = new Anime();
-        /* Aqui estamos inserindo valores nos atributos privados da classe Anime
-        anime.setNome("Dragon Ball Z");
-        anime.setTipo("Televisionado");
-        anime.setEpisodio(50);*/
-        anime.init("Dragon Ball Z", "Televisionado", 45, "Ação/Drama");
+        /*Construtor que cria o objeto com os valores já setados por padrão*/
+        Anime anime = new Anime("Dragon Ball Z","Televisionado", 45, "Ação/Drama", "Editora Mauricio");
         anime.imprime();
     }
 }
